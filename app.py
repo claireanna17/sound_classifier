@@ -1,25 +1,39 @@
-from flask import Flask, render_template, send_file
-import pandas as pd
-# import prediction function
+import streamlit as st
+# import relevant functions for making the prediction
 
-app = Flask(__name__)
 
-@app.route('/')
-def index():
-    return render_template('index.html')
+def app():
+    st.title("Sound Classifier")
 
-@app.route('/generate_csv')
-def generate_csv():
-    # data = (run prediction function) 
-    df = pd.DataFrame(data)
-    filename = 'predictions.csv'
-    df.to_csv(filename, index=False)
-    return send_file(
-        filename,
-        as_attachment=True,
-        download_name='predictions.csv',
-        mimetype='text/csv'
-    )
+    uploaded_file = st.file_uploader("Upload an audio file", type=["mp3", "wav"])
 
-if __name__ == '__main__':
-    app.run(debug=True)
+    if uploaded_file is not None:
+        st.audio(uploaded_file, format="audio/wav")
+
+        with st.form("analysis_form"):
+            analyze_button_clicked = st.form_submit_button("Analyze")
+
+        if analyze_button_clicked:
+            # Perform analysis on the uploaded file and get the result
+            analysis_result = analyze_audio(uploaded_file)
+
+            # Display the analysis result
+            st.write("The sounds present are:")
+            st.write(analysis_result)
+
+            # Show the reset button
+            reset_button_clicked = st.button("Reset")
+
+            if reset_button_clicked:
+                # Clear the uploaded file and analysis result
+                st.session_state.uploaded_file = None
+                st.session_state.analysis_result = None
+
+
+def analyze_audio(audio_file):
+    # Replace this with analysis code
+    return f"Analysis result for {audio_file.name}" # placeholder for now
+
+
+if __name__ == "__main__":
+    app()
