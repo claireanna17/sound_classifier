@@ -1,5 +1,5 @@
 import streamlit as st
-# import relevant functions for making the prediction
+import prediction
 
 
 def app():
@@ -31,8 +31,8 @@ def app():
 
 
 def analyze_audio(audio_file):
-    # Replace this with analysis code
-    return f"Analysis result for {audio_file.name}" # placeholder for now
+    label = prediction.predict(audio_file)
+    return f"Analysis result for {audio_file.name} is '{label}'" # placeholder for now
 
 
 if __name__ == "__main__":
