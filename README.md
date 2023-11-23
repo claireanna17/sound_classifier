@@ -14,7 +14,7 @@ We built the model based off of Kaggle source code and Torchvision model “effi
 
 
 ```
-python app.py
+streamlit run app.py
 ```
 
 
