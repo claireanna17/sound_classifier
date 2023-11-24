@@ -13,8 +13,14 @@ We built the model based off of Kaggle source code and Torchvision model “effi
 
 ## Running the app
 
-* Download: FSDKaggle2018.meta/train_post_competition.csv and models/modelV1.2.pth
-* Then run following code:
+1. Download (into a new project/folder):
+   * FSDKaggle2018.meta/train_post_competition.csv
+   * models/modelV1.2.pth
+   * prediction.py
+   * app.py
+   * templates/index.html
+2. Install necessary packges (might need to do 'pip install opencv-python')
+3. Run following code:
 
 
 ```
