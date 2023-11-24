@@ -3,6 +3,7 @@
 Final project for McGill AI Society Intro to ML Bootcamp (MAIS 202 - Winter 2023). 
 
 Training data retrieved from [zenodo](https://zenodo.org/records/2552860#.XFD05fwo-V4).
+Source code inspiration/references from [kaggle](https://www.kaggle.com/code/blackjacl/pytorch-audio).
 
 ## Project description
 
