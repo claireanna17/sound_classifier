@@ -8,8 +8,8 @@ Source code inspiration/references from [kaggle](https://www.kaggle.com/code/bla
 
 ## Project description
 
-This Sound Classifier project using a web app that allows the user to input an audio clip and outputs the sound's label. 
-We built the model based off of Kaggle source code and Torchvision model “efficientnet_b0”. The training and testing datat is from Zenodo. Our model's architecture utilizes CNN.
+This Sound Classifier project uses a web app that allows the user to input an audio clip and outputs the sound's label. 
+We finetuned a CNN model based off of Kaggle source code and Torchvision model “efficientnet_b0”. The training and testing data is from Zenodo.
 
 ## Running the app
 
